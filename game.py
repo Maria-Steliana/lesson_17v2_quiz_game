@@ -4,6 +4,8 @@ import time
 import json
 import copy
 
+from quiz_logger import logger
+
 POSSIBLE_ANSWERS = {0: 'a.', 1: 'b.', 2: 'c.', 3: 'd.'}
 
 
@@ -29,6 +31,8 @@ def read_questions(questions_path: str = "questions.json") -> list:
         return questions
     except Exception as e:
         print(f"Fatal error on reading quiz questions: {e}")
+        logger.error(print(f"Fatal error on reading quiz questions: {e}"))
+        exit(1)
 
 
 def run_game(player: dict, questions_path: str = "questions.json") -> int:
