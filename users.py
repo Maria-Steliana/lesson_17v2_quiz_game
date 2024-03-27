@@ -1,6 +1,7 @@
 import json
 
 
+
 def add_user(player_id: str, all_players: dict, path: str = "users.json") -> dict:
     full_name = input("Introdu numele tau (optional): ")
     full_name = player_id if full_name == "" or not full_name.isalnum() else full_name

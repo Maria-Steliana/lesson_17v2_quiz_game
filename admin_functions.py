@@ -6,6 +6,7 @@ MENIU = """
 2. Remove question """
 
 
+
 def add_question(all_questions: list, questions_path: str = "questions.json"):
     try:
         new_question = input("Introdu o noua intrebare: ")

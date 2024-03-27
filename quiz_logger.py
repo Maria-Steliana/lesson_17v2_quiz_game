@@ -2,6 +2,7 @@ import logging
 
 import coloredlogs
 
+
 # DEBUG iti afiseaza toate tipurile de erori
 # INFO iti face un fisier text cu loggins
 

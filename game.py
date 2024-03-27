@@ -6,6 +6,7 @@ import copy
 
 from quiz_logger import logger
 
+
 POSSIBLE_ANSWERS = {0: 'a.', 1: 'b.', 2: 'c.', 3: 'd.'}
 
 
