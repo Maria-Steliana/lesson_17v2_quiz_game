@@ -25,8 +25,23 @@ def add_question(all_questions: list, questions_path: str = "questions.json"):
         print(f"Error on adding new question {e}")
 
 
-def delete_question():
-    pass
+def delete_question(all_questions: list, questions_path: str = "questions.json"):
+    try:
+        questions_list = [question['question'] for question in all_questions]
+        for question in questions_list:
+            print(f"{questions_list.index(question)}. {question}")
+
+        question_to_delete = int(input("Introdu indexul inrebarii pe care vrei sa o stergi: "))
+        all_questions.pop(question_to_delete)
+
+        with open(questions_path, "w") as f:
+            f.write(json.dumps({"questions": all_questions}, indent=4))
+    except IndexError as e:
+        print(f"Question not found. Error on deleting: {e}")
+    except Exception as e:
+        print(f"Unknown Error on deleting: {e}")
+    else:
+        print("Successfully deleted question.")
 
 
 def change_correct_answer():
@@ -41,7 +56,7 @@ def run():
         case "1":
             add_question(questions)
         case "2":
-            pass
+            delete_question(questions)
         case _:
             exit()
 
